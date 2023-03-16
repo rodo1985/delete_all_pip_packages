@@ -7,5 +7,5 @@ packages = packages.decode().split('\n')
 # Loop through the list of packages and uninstall each one
 for package in packages:
     if package:
-        if package.split('==')[0] != 'pip':
+        if package.split('==')[0] != 'pip' or package.split('==')[0] != 'setuptools':
             subprocess.check_call(['pip', 'uninstall', '-y', package.split('==')[0]])
